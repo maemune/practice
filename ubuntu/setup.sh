@@ -18,7 +18,6 @@ ufw enable
 # SSH Setup
 SSH_CONFIG="/etc/ssh/sshd_config"
 SSH_CONFIG_BACKUP="/etc/ssh/sshd_config.bk"
-
 SSH_PORT_NUMBER="22"
 
 function change_setting () {
