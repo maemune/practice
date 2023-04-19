@@ -36,7 +36,6 @@ function change_setting () {
     echo -e "${KEYWORD} ${VALUE}" >> ${TARGET}
   fi
 }
-
 if [ -f ${SSH_CONFIG_BACKUP} ]; then
   echo "SSH setting is already done."
 else
