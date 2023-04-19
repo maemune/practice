@@ -1,16 +1,17 @@
 #!/bin/bash
 
-# update
+# Update
 apt-get update
 apt full-upgrade -y
 apt autoremove -y
 
-# time zone
+# Timezone Setup
 timedatectl set-timezone Asia/Tokyo
+
 # noPasswd ubuntu
 echo 'ubuntu ALL=NOPASSWD: ALL' | EDITOR='tee -a' visudo
 
-# Firewall
+# Firewall Allow
 ufw allow 22
 ufw enable
 
@@ -87,15 +88,15 @@ else
   #grep "^PermitTunnel" ${SSH_CONFIG}
 fi
 
-# user create
+# UserCreate
 adduser -q --gecos "" --disabled-login ubuntu
 gpasswd -a ubuntu sudo
 
-# user ssh setup
+# User SSH Setup
 mkdir -p /home/ubuntu/.ssh
 chown ubuntu:ubuntu /home/ubuntu/.ssh
 install -m 700 -o ubuntu -g ubuntu ~/.ssh/authorized_keys /home/ubuntu/.ssh/authorized_keys
 systemctl restart sshd.service
 
-#logout
+# Logout
 killall -u root
