@@ -91,6 +91,7 @@ mkdir -p /home/ubuntu/.ssh
 sudo chown ubuntu:ubuntu /home/ubuntu/.ssh
 sudo rm /home/ubuntu/.ssh/authorized_keys
 curl https://github.com/maeda-doctoral.keys >> /home/ubuntu/.ssh/authorized_keys
+sudo chown ubuntu:ubuntu /home/ubuntu/.ssh/authorized_keys
 sudo chmod 700 /home/ubuntu/.ssh/authorized_keys
 sudo systemctl restart sshd.service
 
