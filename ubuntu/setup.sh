@@ -5,6 +5,8 @@ apt-get update
 apt full-upgrade -y
 apt autoremove -y
 
+apt install nano curl -y
+
 # Timezone Setup
 timedatectl set-timezone Asia/Tokyo
 
