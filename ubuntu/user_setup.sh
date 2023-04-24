@@ -13,7 +13,7 @@ sudo echo 'ubuntu ALL=NOPASSWD: ALL' | EDITOR='tee -a' visudo
 
 # Firewall Allow
 sudo ufw allow 22
-sudo ufw enable
+echo 'y' | sudo ufw enable
 
 # SSH Setup
 SSH_CONFIG="/etc/ssh/sshd_config"
@@ -92,7 +92,7 @@ sudo chown ubuntu:ubuntu /home/ubuntu/.ssh
 sudo rm /home/ubuntu/.ssh/authorized_keys
 curl https://github.com/maeda-doctoral.keys >> /home/ubuntu/.ssh/authorized_keys
 sudo chmod 700 /home/ubuntu/.ssh/authorized_keys
-systemctl restart sshd.service
+sudo systemctl restart sshd.service
 
 # Logout
-killall -u *
+killall -u ubuntu
