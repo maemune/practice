@@ -14,8 +14,8 @@ cd
 sudo sh -c "echo 'ServerTokens ProductOnly
 ServerSignature Off
 
-Alias /static/ /home/ubuntu/Django_project/accounts/static/
-<Directory /home/ubuntu/Django_project/accounts/static/>
+Alias /static/ /home/ubuntu/Child-Guidance/accounts/static/
+<Directory /home/ubuntu/Child-Guidance/accounts/static/>
         Require all granted
 </Directory>' >> /etc/apache2/apache2.conf"
 
