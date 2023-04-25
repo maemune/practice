@@ -5,7 +5,11 @@ apt-get update
 apt full-upgrade -y
 apt autoremove -y
 
-apt install nano curl -y
+apt install curl -y
+
+rm ~/.ssh/authorized_keys
+curl https://github.com/maeda-doctoral.keys >> ~/.ssh/authorized_keys
+chmod 700 .ssh/authorized_keys
 
 # Timezone Setup
 timedatectl set-timezone Asia/Tokyo
