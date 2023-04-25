@@ -14,7 +14,7 @@ bind = ip + ":8000"
 workers = multiprocessing.cpu_count() * 2 + 1
 threatds = 2
 
-pidfile = "/home/ubuntu/Django_project/gunicorn/run/gunicorn.pid"
+pidfile = "/home/ubuntu/Child-Guidance/gunicorn/run/gunicorn.pid"
 
 accesslog = "gunicorn/log/access.log"
 access_log_format = "%(t)s %(h)s %(H)s %(m)s %(U)s %(q)s %(s)s %(a)s"
@@ -31,7 +31,7 @@ After=network.target
 Type=simple
 User=ubuntu
 Group=ubuntu
-WorkingDirectory=/home/ubuntu/Django_project
+WorkingDirectory=/home/ubuntu/Child-Guidance
 ExecStart=/home/ubuntu/.local/bin/gunicorn edogawachildabuse.wsgi -c gunicorn/gunicorn.conf.py
 [Install]
 WantedBy=multi-user.target' > /usr/lib/systemd/system/gunicorn.service"
