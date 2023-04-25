@@ -5,11 +5,11 @@ mkdir -p gunicorn/log gunicorn/run
 
 echo '# -*- coding: utf-8 -*-
 import multiprocessing
-import socket
+from socket import gethostbyname, gethostname
 
 raw_env = ["DJANGO_SETTINGS_MODULE=edogawachildabuse.settings"]
 
-ip = socket.gethostbyname(socket.gethostname() + ".local")
+ip = gethostbyname(gethostname())
 bind = ip + ":8000"
 workers = multiprocessing.cpu_count() * 2 + 1
 threatds = 2
