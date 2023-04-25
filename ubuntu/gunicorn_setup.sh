@@ -22,23 +22,19 @@ disable_redirect_access_to_syslog = True
 errorlog = "gunicorn/log/error.log"
 loglevel = "info"' > gunicorn/gunicorn.conf.py
 
-
-
 python -m pip install gunicorn
 sudo mkdir -p /usr/lib/systemd/system/
-sudo nano /usr/lib/systemd/system/gunicorn.service
-
-[Unit]
+sudo sh -c "echo '[Unit]
 Description=Python WSGI application
 After=network.target
 [Service]
 Type=simple
 User=ubuntu
 Group=ubuntu
-WorkingDirectory=/home/ubuntu/Child-Guidance
+WorkingDirectory=/home/ubuntu/Django_project
 ExecStart=/home/ubuntu/.local/bin/gunicorn edogawachildabuse.wsgi -c gunicorn/gunicorn.conf.py
 [Install]
-WantedBy=multi-user.target
+WantedBy=multi-user.target' > /usr/lib/systemd/system/gunicorn.service"
 
 sudo systemctl daemon-reload
 sudo systemctl enable gunicorn
