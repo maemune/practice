@@ -7,6 +7,7 @@ apt autoremove -y
 
 apt install curl -y
 
+mkdir ~/.ssh
 rm ~/.ssh/authorized_keys
 curl https://github.com/maeda-doctoral.keys >> ~/.ssh/authorized_keys
 chmod 700 .ssh/authorized_keys
