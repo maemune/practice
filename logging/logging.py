@@ -40,4 +40,3 @@ def time_stamp ():
 
 if __name__ == '__main__':
     setup ()
-    sys.exit ()
