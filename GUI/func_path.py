@@ -15,4 +15,3 @@ def main (flag): # Option True:FileSelect False:DirSelect
 
 if __name__ == '__main__':
     print (main (True))
-    sys.exit ()
